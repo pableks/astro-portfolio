@@ -1,100 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import '@fontsource/space-mono';
+import TaskCalendar from '../components/TaskCalendar';
 ---
 
 <Layout title="trypablo website">
-	<main>
+	<main class="min-h-screen p-4">
+		<div class="max-w-3xl mx-auto">
+			<h1 class="font-['Space_Mono'] text-6xl font-bold text-center mb-2">
+				<span class="text-[#883aea]">trypablo</span>
+			</h1>
+			<h2 class="font-['Space_Mono'] text-m font-bold text-center mb-8">
+				<span class="text-white">dev, designer, artist</span>
+			</h2>
+			
+			<div class="mb-8">
+				<TaskCalendar client:load />
+			</div>
 
-		<h1><span class="text-gradient">trypablo</span></h1>
-		
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://instagram.com/try.pabl0"
-				title="site is being built"
-				body="click to check my instagram."
-				
-			/>
+			<p class="font-['Space_Mono'] text-sm font-bold text-center mb-4">
+				<span>have some fun in the meantime</span>
+			</p>
+			<canvas class="block mx-auto"></canvas>
 
-		</ul>
-		<p><span class="text-small">have some fun in the meantime</span></p>
-		<canvas></canvas>
-
-
-		<script  is:inline src="/script.js"></script>	
-	
+			<script is:inline src="/script.js"></script>	
+		</div>
 	</main>
-
 </Layout>
-
-<style>
-canvas {
-    display: block;
-    margin: auto;
-}
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-family: "Space Mono";
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	p{
-		font-family: "Space Mono";
-		font-size: 1rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	ul {
-		font-family: "Space Mono";
-	}
-	.text-gradient {
-		color: #883aea
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
