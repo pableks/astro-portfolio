@@ -63,7 +63,7 @@ const TaskCalendar = () => {
       )
     ).toISOString();
 
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&type=video&order=date&publishedAfter=${startDate}&publishedBefore=${endDate}&key=${YOUTUBE_API_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&type=video&order=date&publishedAfter=${startDate}&publishedBefore=${endDate}&maxResults=50&key=${YOUTUBE_API_KEY}`;
 
     try {
       console.log("Fetching YouTube data for", monthKey);
